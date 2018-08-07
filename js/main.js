@@ -656,65 +656,55 @@
         // Exercice 10: Un jeu en JavaScript
 
 
-        // user choice
-          var userChoice = prompt("Fais ton choix: pierre, feuille, ciseaux?");
+       var userScore = 0;
+       var pcScore = 0;
 
-          if (! userChoice){
-            console.log("Erreur de saisie");
-          } else {
-            console.log("Vous :" + " "+ userChoice);
-          }
+       while ((userScore < 3) && (pcScore < 3)) {       //the game stops at three points
 
+              // user choice
+              var userChoice = prompt("pierre, feuille ou ciseaux?");
+              console.log("Vous" + " " + userChoice);
 
-          // computer choice
-          var computer = ["pierre", "feuille", "ciseaux"];
-          var computerChoice = computer[Math.floor(Math.random()*computer.length)];
+       while ((userChoice != "pierre") && (userChoice != "feuille") && (userChoice != "ciseaux")) {
 
-          if (computerChoice === 0){
-            computerChoice = "pierre";
-          } else if (computerChoice === 1){
-            computerChoice= "feuille";
-          } else {
-            computerChoice = "ciseaux";
-          }
-           console.log("Ordinateur:" + " "+ computerChoice);
+              userChoice = prompt("Erreur de saisie :pierre, feuille ou ciseaux?");
+         }
+
+            //  computer choice
+             var computer = ["pierre", "feuille", "ciseaux"];
+             var computerChoice = computer[Math.floor(Math.random()*computer.length)];
+             console.log("Ordinateur" + " " + computerChoice);
 
 
-           // compare user choice vs computer choice
-           var compare = function(choice1,choice2) {
-           if (choice1 === choice2) {
-               return( "Egalité!");
-           }
-           if (choice1 === "pierre") {
-               if (choice2 === "ciseaux") {
+            // compare user and computer choice
+             if (userChoice === computerChoice) {   // equality
+               alert("Egalité");
+             }
 
-                   return( "Gagné!");
+             if ((userChoice === "pierre") && (computerChoice === "ciseaux")) {  // user win
+                 alert("Gagné");
+                 userScore++;
+              } else if ((userChoice === "pierre") && (computerChoice === "feuille")) { // user loose
+                        alert("Perdu");
+                        pcScore++;
+               } else if ((userChoice === "feuille") && (computerChoice === "pierre")) { // user win
+                          alert("Gagné!");
+                          userScore++;
+                  } else if ((userChoice === "feuille") && (computerChoice === "ciseaux")) {  // user loose
+                            alert("Perdu!")
+                            pcScore++;
+                    } else if ((userChoice === "ciseaux")&&(computerChoice === "feuille")) { // user win
+                            alert("Gagné");
+                            userScore++;
+                    } else if ((userChoice === "ciseaux") && (computerChoice === "pierre")) { // user loose
+                            alert("Perdu!")
+                            pcScore++;
+                        }
+            }
+
+              // final message
+               if (userScore === 3) {
+                 alert("Bravo! Tu as gagné!")
                } else {
-
-                   return( "Perdu! Essaie encore.");
+                 alert("aie aie aie! Dommage!")
                }
-           }
-          else if (choice1 === "papier") {
-               if (choice2 === "pierre") {
-
-                   return( "Gagné!");
-               } else {
-
-                   return("Perdu! Essaie encore.");
-               }
-           }
-           else if (choice1 === "ciseaux") {
-               if (choice2 === "pierre") {
-
-                   return( "Perdu! Essaie encore.");
-               } else {
-
-                   return( "Gagné!");
-               }
-           }
-       };
-
-       // Run the compare function
-       var results = compare(userChoice,computerChoice);
-
-       console.log(results);
