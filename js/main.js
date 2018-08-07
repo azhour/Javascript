@@ -656,36 +656,65 @@
         // Exercice 10: Un jeu en JavaScript
 
 
+        // user choice
+          var userChoice = prompt("Fais ton choix: pierre, feuille, ciseaux?");
 
-          var user = prompt("Fais ton choix: pierre, feuille, ciseaux?");
+          if (! userChoice){
+            console.log("Erreur de saisie");
+          } else {
+            console.log("Vous :" + " "+ userChoice);
+          }
 
+
+          // computer choice
           var computer = ["pierre", "feuille", "ciseaux"];
           var computerChoice = computer[Math.floor(Math.random()*computer.length)];
 
-           function userPlay(userChoice, computerChoice){
-          	console.log(userChoice);
-
-          	if(userChoice == computerChoice){
-          		console.log("Egalité");
-
-          	  } else if(computerChoice == "pierre" && userChoice == "feuille"){
-          		console.log("Bien joué!");
-
-          	  } else if(computerChoice == "feuille" && userChoice == "ciseaux"){
-          		console.log("Bien joué!");
-
-          	  } else if(computerChoice == "ciseaux" && userChoice == "pierre"){
-          		console.log("Bien joué!");
-
-          	  } else if(user !== 'pierre' && user !== 'feuille' && user !== 'ciseaux' ){
-          	   console.log("Entrée non valide");
-
-          	  }
-
+          if (computerChoice === 0){
+            computerChoice = "pierre";
+          } else if (computerChoice === 1){
+            computerChoice= "feuille";
+          } else {
+            computerChoice = "ciseaux";
           }
+           console.log("Ordinateur:" + " "+ computerChoice);
 
-          userPlay();
 
-          for (var userPlay = 0; userPlay < 4; userPlay =-1) {
-            console.log("La partie est terminée!");
-          }
+           // compare user choice vs computer choice
+           var compare = function(choice1,choice2) {
+           if (choice1 === choice2) {
+               return( "Egalité!");
+           }
+           if (choice1 === "pierre") {
+               if (choice2 === "ciseaux") {
+
+                   return( "Gagné!");
+               } else {
+
+                   return( "Perdu! Essaie encore.");
+               }
+           }
+          else if (choice1 === "papier") {
+               if (choice2 === "pierre") {
+
+                   return( "Gagné!");
+               } else {
+
+                   return("Perdu! Essaie encore.");
+               }
+           }
+           else if (choice1 === "ciseaux") {
+               if (choice2 === "pierre") {
+
+                   return( "Perdu! Essaie encore.");
+               } else {
+
+                   return( "Gagné!");
+               }
+           }
+       };
+
+       // Run the compare function
+       var results = compare(userChoice,computerChoice);
+
+       console.log(results);
