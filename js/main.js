@@ -651,60 +651,113 @@
         // purchase(choix1);
 
         //Exercice 4 : Vous avez dit factorielle?
+          //
+          // function factorial(num) {
+          //       var result = 1;
+          //       for (var i = 1; i <= num; i++) {
+          //         result = result * i;
+          //
+          //       }
+          //       return result;
+          // }
+          //     var test = factorial(4);
+          //     console.log(test);
 
+        // Exercice 5 : Les tirets ça compte!
+
+        // Exercice 8 : Le max d'un tableau
+
+        
+
+        // Exercice 9: une to do List
+            var Listes = [];
+            var mot = "";
+
+            while (mot !== "fin") {
+                mot = prompt("Entrez un mot ou tapez fin pour arrêter :");
+                if (mot !== "fin") {
+                    Listes.push(mot);
+                }
+            }
+
+            Listes.forEach(function (mot) {
+                console.log(mot);
+            });
 
         // Exercice 10: Un jeu en JavaScript
 
+       //
+       // var userScore = 0;
+       // var pcScore = 0;
+       //
+       // while ((userScore < 3) && (pcScore < 3)) {       //the game stops at three points
+       //
+       //        // user choice
+       //        var userChoice = prompt("pierre, feuille ou ciseaux?").toLowerCase();
+       //        console.log("Vous" + " " + userChoice);
+       //
+       // while ((userChoice != "pierre") && (userChoice != "feuille") && (userChoice != "ciseaux")) {
+       //
+       //        userChoice = prompt("Erreur de saisie :pierre, feuille ou ciseaux?");
+       //   }
+       //
+       //      //  computer choice
+       //       var computer = ["pierre", "feuille", "ciseaux"];
+       //       var computerChoice = computer[Math.floor(Math.random()*computer.length)];
+       //       console.log("Ordinateur" + " " + computerChoice);
+       //
+       //
+       //      // compare user and computer choice
+       //       if (userChoice === computerChoice) {   // equality
+       //         alert("Egalité");
+       //       }
+       //
+       //       else if ((userChoice === "pierre") && (computerChoice === "ciseaux")) {  // user win
+       //           alert("Gagné");
+       //           userScore++;
+       //        } else if ((userChoice === "pierre") && (computerChoice === "feuille")) { // user loose
+       //                  alert("Perdu");
+       //                  pcScore++;
+       //         } else if ((userChoice === "feuille") && (computerChoice === "pierre")) { // user win
+       //                    alert("Gagné!");
+       //                    userScore++;
+       //            } else if ((userChoice === "feuille") && (computerChoice === "ciseaux")) {  // user loose
+       //                      alert("Perdu!")
+       //                      pcScore++;
+       //              } else if ((userChoice === "ciseaux")&&(computerChoice === "feuille")) { // user win
+       //                      alert("Gagné");
+       //                      userScore++;
+       //              } else if ((userChoice === "ciseaux") && (computerChoice === "pierre")) { // user loose
+       //                      alert("Perdu!")
+       //                      pcScore++;
+       //                  }
+       //      }
+       //
+       //        // final message
+       //         if (userScore === 3) {
+       //           alert("Bravo! Tu as gagné!")
+       //         } else {
+       //           alert("aie aie aie! Dommage!")
+       //         }
 
-       var userScore = 0;
-       var pcScore = 0;
 
-       while ((userScore < 3) && (pcScore < 3)) {       //the game stops at three points
+        // Exercice 11 : compter le nombre de caractère
 
-              // user choice
-              var userChoice = prompt("pierre, feuille ou ciseaux?");
-              console.log("Vous" + " " + userChoice);
-
-       while ((userChoice != "pierre") && (userChoice != "feuille") && (userChoice != "ciseaux")) {
-
-              userChoice = prompt("Erreur de saisie :pierre, feuille ou ciseaux?");
-         }
-
-            //  computer choice
-             var computer = ["pierre", "feuille", "ciseaux"];
-             var computerChoice = computer[Math.floor(Math.random()*computer.length)];
-             console.log("Ordinateur" + " " + computerChoice);
-
-
-            // compare user and computer choice
-             if (userChoice === computerChoice) {   // equality
-               alert("Egalité");
-             }
-
-             if ((userChoice === "pierre") && (computerChoice === "ciseaux")) {  // user win
-                 alert("Gagné");
-                 userScore++;
-              } else if ((userChoice === "pierre") && (computerChoice === "feuille")) { // user loose
-                        alert("Perdu");
-                        pcScore++;
-               } else if ((userChoice === "feuille") && (computerChoice === "pierre")) { // user win
-                          alert("Gagné!");
-                          userScore++;
-                  } else if ((userChoice === "feuille") && (computerChoice === "ciseaux")) {  // user loose
-                            alert("Perdu!")
-                            pcScore++;
-                    } else if ((userChoice === "ciseaux")&&(computerChoice === "feuille")) { // user win
-                            alert("Gagné");
-                            userScore++;
-                    } else if ((userChoice === "ciseaux") && (computerChoice === "pierre")) { // user loose
-                            alert("Perdu!")
-                            pcScore++;
-                        }
-            }
-
-              // final message
-               if (userScore === 3) {
-                 alert("Bravo! Tu as gagné!")
-               } else {
-                 alert("aie aie aie! Dommage!")
-               }
+      //   var str = prompt("Saisis une phrase:");
+      //   var letter = prompt("Saisis une lettre de l'alphabet:");
+      // function CharacterNumber(str,letter) {
+      //   console.log(str.length);
+      //   console.log(letter.length);
+      //   if (letter.length<= 1) {
+      //     console.log(letter);
+      //   }else{
+      //     prompt("Veuillez saisir une seule lettre de l'alphabet");
+      //
+      //   }
+      //   if ((letter === a)||(letter === b) ||(letter === c)|| (letter === d) || (letter === e) || (letter === d)) {
+      //     console.log(letter);
+      //   }else {
+      //     console.log("erreur, veuillez saisir une lettre de l'alphabet");
+      //   }
+      // }
+      //  CharacterNumber(str,letter);
